@@ -843,7 +843,7 @@ const start = async () => {
                   const messageInfo = await callbacks[lastStep](chatId);
                   await bot.sendMessage(chatId, messageInfo.text, messageInfo.options);
 
-                  console.log(userStepsData.steps);
+                  // console.log(userStepsData.steps);
                }
                await userStepsData.save(); // Зберігаємо зміни у базі даних
             } else {
