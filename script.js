@@ -12,7 +12,7 @@ const { AnnouncementModel, UniqueCodeModel, SellerModel, UserModel, UserStepsMod
 
 // -------------------------------DATABASE---------------------------------------------------------------------
 // URL з'єднання з вашою базою даних MongoDB. Замініть на свій URL.
-const dbUrl = 'mongodb://localhost:27017/telegram_marketplace_db';
+const dbUrl = 'mongodb://localhost:27017/mongodb+srv://Revorved1:vdthbr010583@nulpbot.m9lnvqj.mongodb.net/';
 
 // Підключення до бази даних
 mongoose.connect(dbUrl, {
