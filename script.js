@@ -110,7 +110,6 @@ async function createNewAd(chatId, option, userId, text) {
    }
 }
 
-
 async function authenticateSeller(chatId, code, userId, nickname) {
    try {
       const uniqueCode = await UniqueCodeModel.findOne({ code });
@@ -495,7 +494,7 @@ const start = async () => {
                   userStepsData.steps = ['main_menu'];
                   await userStepsData.save();
 
-                  console.log(userStepsData.steps);
+                  // console.log(userStepsData.steps);
 
                   bot.sendMessage(chatId, mainMenuText, mainMenuKeyboard);
                } catch (error) {
@@ -511,7 +510,7 @@ const start = async () => {
                   userStepsData.steps = ['main_menu', 'find_menu'];
                   await userStepsData.save();
 
-                  console.log(userStepsData.steps);
+                  // console.log(userStepsData.steps);
 
                   switch (courseNumber) {
                      case 1:
@@ -733,7 +732,7 @@ const start = async () => {
                await sendFiles(chatId, messageInfo.folderPath);
             }
 
-            console.log(userStepsData.steps);
+            // console.log(userStepsData.steps);
 
             // Розбиваємо повідомлення на частини
             const chunks = chunkString(messageInfo.text, 4000); // 4000 - максимальна довжина повідомлення
@@ -844,7 +843,7 @@ const start = async () => {
                   const messageInfo = await callbacks[lastStep](chatId);
                   await bot.sendMessage(chatId, messageInfo.text, messageInfo.options);
 
-                  console.log(userStepsData.steps);
+                  // console.log(userStepsData.steps);
                }
                await userStepsData.save(); // Зберігаємо зміни у базі даних
             } else {
