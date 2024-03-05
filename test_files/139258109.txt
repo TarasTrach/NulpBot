@@ -1,0 +1,31 @@
+
+
+#include <stdio.h>
+
+int isTriangle(double a, double b, double c);
+
+int main() {
+    double a, b, c;
+
+    printf("Enter the length of the sides of the triangle: \n");
+    scanf("%lf %lf %lf", &a, &b, &c);
+
+    int result = isTriangle(a, b, c);
+
+    if (result == 1) {
+        printf("It is possible to build a triangle with sides a = %.2lf, b = %.2lf and c = %.2lf\n", a, b, c); 
+    } else {
+        printf("It is impossible to build a triangle with sides a = %.2lf, b = %.2lf and c = %.2lf\n", a, b, c); 
+    }
+
+    return 0; 
+} 
+
+ int isTriangle(double a, double b, double c) { 
+
+     if ((a + b > c) && (a + c > b) && (b + c > a)) { 
+         return 1;  // it's possible to build the triangle  
+     } else { 
+         return 0; // it's impossible to build the triangle  
+     }  
+}

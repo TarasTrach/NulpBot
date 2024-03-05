@@ -1,22 +1,24 @@
 {
-  "name": "testbot",
-  "version": "1.0.0",
-  "description": "Test",
-  "main": "script.js",
-  "scripts": {
-    "test": "echo /\"Error: no test specified\\\" && exit 1",
-    "start": "nodemon script.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "no"
-  },
-  "keywords": [
-    "[]"
-  ],
-  "author": "revorved",
-  "license": "ISC",
-  "dependencies": {
-    "node-telegram-bot-api": "^0.64.0"
-  }
+   "name": "testbot",
+   "version": "1.0.0",
+   "description": "Test",
+   "main": "script.js",
+   "scripts": {
+      "test": "echo /\"Error: no test specified\\\" && exit 1",
+      "dev": "nodemon --no-deprecation script.js",
+      "start": "node script.js"
+   },
+   "repository": {
+      "type": "git",
+      "url": "no"
+   },
+   "keywords": [
+      "[]"
+   ],
+   "author": "revorved",
+   "license": "ISC",
+   "dependencies": {
+      "mongoose": "^8.0.2",
+      "node-telegram-bot-api": "^0.64.0"
+   }
 }
