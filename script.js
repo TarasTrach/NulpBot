@@ -443,7 +443,7 @@ const start = async () => {
          setTimeout(updateAnnouncementStatuses, 1000);
          console.log(`Автоматичне оновлення статусів: ${currentDate}`);
 
-         setInterval(updateSubscriptionStatuses, 24 * 60 * 60 * 1000);
+         setInterval(updateSubscriptionStatuses, 24 * 1000);  //24 * 60 * 60 * 1000
       }, timeUntilNextMidnight);
 
 
