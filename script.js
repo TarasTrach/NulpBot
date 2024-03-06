@@ -437,14 +437,23 @@ const start = async () => {
       nextMidnight.setHours(24, 0, 0, 0); // Встановлюємо час на наступний 00:00
       const timeUntilNextMidnight = nextMidnight - now;
 
-      setTimeout(function () {
+      function updateAll() {
          const currentDate = new Date();
          updateSubscriptionStatuses();
          setTimeout(updateAnnouncementStatuses, 1000);
          console.log(`Автоматичне оновлення статусів: ${currentDate}`);
+      }
 
-         setInterval(updateSubscriptionStatuses, 24 * 1000);  //24 * 60 * 60 * 1000
-      }, timeUntilNextMidnight);
+      setInterval(updateAll, 30000);
+
+      // setTimeout(function () {
+      //    const currentDate = new Date();
+      //    updateSubscriptionStatuses();
+      //    setTimeout(updateAnnouncementStatuses, 1000);
+      //    console.log(`Автоматичне оновлення статусів: ${currentDate}`);
+
+      //    setInterval(updateSubscriptionStatuses, 24 * 1000);  //24 * 60 * 60 * 1000
+      // }, timeUntilNextMidnight);
 
 
       if (currentTime - lastMessageTime < messageLimitInterval) {
