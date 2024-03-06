@@ -431,30 +431,14 @@ const start = async () => {
       const adminUsersId = 891948666;
       const moderatorUsersId = 743865377;
 
-      // Оновлення статусів підписок кожен день о 00:00
-      const now = new Date();
-      const nextMidnight = new Date(now);
-      nextMidnight.setHours(24, 0, 0, 0); // Встановлюємо час на наступний 00:00
-      const timeUntilNextMidnight = nextMidnight - now;
-
-      function updateAll() {
-         const currentDate = new Date();
-         updateSubscriptionStatuses();
-         setTimeout(updateAnnouncementStatuses, 1000);
-         console.log(`Автоматичне оновлення статусів: ${currentDate}`);
-      }
-
-      setInterval(updateAll, 30000);
-
-      // setTimeout(function () {
+      // function updateAll() {
       //    const currentDate = new Date();
       //    updateSubscriptionStatuses();
       //    setTimeout(updateAnnouncementStatuses, 1000);
       //    console.log(`Автоматичне оновлення статусів: ${currentDate}`);
+      // }
 
-      //    setInterval(updateSubscriptionStatuses, 24 * 1000);  //24 * 60 * 60 * 1000
-      // }, timeUntilNextMidnight);
-
+      // setInterval(updateAll, 30000);
 
       if (currentTime - lastMessageTime < messageLimitInterval) {
          await bot.sendMessage(chatId, '？Шановний, куда так спішиш?');
