@@ -580,7 +580,7 @@ const start = async () => {
                         },
                      };
 
-                     await bot.sendMessage(chatId, 'Виберіть новий курс:', keyboard);
+                     await bot.sendMessage(chatId, '🔄Виберіть новий курс:', keyboard);
                   } catch (error) {
                      console.error('Помилка при відправці команди /changecourse:', error);
                      await bot.sendMessage(chatId, 'Помилка при обробці команди /changecourse.');
