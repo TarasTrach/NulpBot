@@ -728,7 +728,7 @@ const start = async () => {
             // console.log(userStepsData.steps);
 
             // Розбиваємо повідомлення на частини
-            const chunks = chunkString(messageInfo.text, 5000); // Максимальна довжина повідомлення
+            const chunks = chunkString(messageInfo.text, 4000); // Максимальна довжина повідомлення
             for (let i = 0; i < chunks.length; i++) {
                const options = (i === chunks.length - 1) ? messageInfo.options : {}; // Додаємо кнопки лише до останнього повідомлення
 
