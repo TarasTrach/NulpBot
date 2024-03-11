@@ -74,7 +74,7 @@ const callbacks = {
 
    'KI_1_3_H': async (chatId) => {
       const text = textForHalyava;
-      const folderPath = '/Users/revorved/Desktop/NulpBot/nulpbot/test_files';
+      const folderPath = 'C:/#thcbot/nulpBot/nulpbot/test_files';
 
       const options = { ...BackOption }
 
