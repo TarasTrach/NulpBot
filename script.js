@@ -848,7 +848,7 @@ const start = async () => {
                await bot.sendMessage(chatId, 'Помилка, відкрийте меню - /menu');
             }
          } catch (error) {
-            // console.error('Помилка при обробці кнопки "Назад":', error);
+            console.error('Помилка при обробці кнопки "Назад":', error);
             await bot.sendMessage(chatId, 'Помилка при обробці кнопки "Назад".');
          }
          return;
