@@ -7,7 +7,10 @@ const userSteps = {};
 
 const textForHalyava = 'Зверніть увагу, що файли мають право завантажувати будь-які користувачі(не все може бути якісне)🙃                                                    Якщо маєте бажання завантажити щось - писати @lil_chicha_l';
 
-const mainMenuText = '*Головне меню*\nМеню буде доповнюватись';
+// const mainMenuText = '*Головне меню*\nМеню буде доповнюватись';
+
+const mainMenuFilePath = 'C:/#thcbot/nulpBot/nulpbot/text_files/main_menu.txt';
+const mainMenuText = readTextFromFile(mainMenuFilePath);
 
 const mainMenuKeyboard = {
    reply_markup: {
@@ -27,11 +30,7 @@ const callbacks = {
    // },
 
    'main_menu': async (chatId) => {
-      const filePath = 'C:/#thcbot/nulpBot/nulpbot/text_files/main_menu.txt';
-
-      const text = readTextFromFile(filePath);
-
-      return { text, mainMenuKeyboard, chatId };
+      return { mainMenuText, mainMenuKeyboard, chatId };
    },
 
    'find_menu': async (chatId) => {
