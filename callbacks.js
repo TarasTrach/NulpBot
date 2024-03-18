@@ -23,6 +23,9 @@ const mainMenuKeyboard = {
 const callbacks = {
    'main_menu': async (chatId) => {
       const text = mainMenuText;
+
+      text = `<center>${text}</center>`;
+
       return { text: text, options: mainMenuKeyboard, chatId };
    },
 
