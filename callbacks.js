@@ -178,7 +178,7 @@ function getLastModifiedTimeAndMessage(filePath) {
       const month = String(lastModifiedTime.getMonth() + 1).padStart(2, '0');
       const year = lastModifiedTime.getFullYear();
 
-      const lastModifiedMessage = `Останні зміни в файлах: ${day}.${month}.${year}`; // Повідомлення з датою у форматі "18.03.2024"
+      const lastModifiedMessage = `Останній раз файли було додано: ${day}.${month}.${year}`; // Повідомлення з датою у форматі "18.03.2024"
       return { lastModifiedTime, lastModifiedMessage };
    } catch (error) {
       console.error('Помилка при отриманні дати останніх змін:', error);
