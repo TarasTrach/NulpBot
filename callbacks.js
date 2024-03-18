@@ -79,7 +79,7 @@ const callbacks = {
       const spoiler = `||${lastModifiedMessage}||`;
 
       const text = `${textForHalyava}       ${spoiler}`;
-      const options = { ...BackOption };
+      const options = { ...BackOption, parse_mode: 'Markdown' };
 
       return { text, options, chatId, folderPath: filePath };
    },
