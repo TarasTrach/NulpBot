@@ -1,6 +1,6 @@
-За декілька тижнів після початку навчання вам дадуть пошту політехніки. З нею ви отримаєте наступні можливості: 
+За декілька тижнів після початку навчання вам дають пошту політехніки. З нею ви отримаєте наступні можливості: 
 ‧ JetBrains All-In-One IDEs Pack
- (https://www.jetbrains.com/shop/eform/students)‧ GitHub Students Pack
- (https://education.github.com/pack)‧ Google Drive Unlimited (Max. 5TB per file)
+‧ GitHub Students Pack
+‧ Google Drive Unlimited (Max. 5TB per file)
 ‧ OneDrive 1TB
 ‧ Office 365 (Online)
