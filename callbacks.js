@@ -17,6 +17,7 @@ const mainMenuKeyboard = {
       ],
    },
    noChunking: true,
+   parse_mode: "Markdown"
 };
 
 const callbacks = {
