@@ -733,7 +733,7 @@ const start = async () => {
                const options = (i === chunks.length - 1) ? messageInfo.options : {}; // Додаємо кнопки лише до останнього повідомлення
 
                // Відправляємо кожну частину окремо
-               await bot.sendMessage(chatId, chunks[i], options, { parse_mode: 'Markdown' });
+               await bot.sendMessage(chatId, chunks[i], options);
             }
 
             // Зберігаємо зміни в базі даних
