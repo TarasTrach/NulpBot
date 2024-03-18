@@ -144,7 +144,7 @@ const callbacks = {
    },
 
    'KI_1_1_H': async (chatId) => {
-      const filePath = 'C:/#thcbot/nulpBot/Halyava/1 Курс/KI/Вишмат'; // Шлях до файлу
+      const filePath = 'C:/#thcbot/nulpbot/Halyava/1 Курс/КІ/Вишмат'; // Шлях до файлу
       const { lastModifiedMessage } = getLastModifiedTimeAndMessage(filePath); // Отримання дати останніх змін
       const spoiler = `_${lastModifiedMessage}_`
 
