@@ -13,7 +13,7 @@ const mainMenuKeyboard = {
    reply_markup: {
       inline_keyboard: [
          [{ text: '🔎Швидкий пошук', callback_data: 'find_menu' }, { text: '📅Останнє оновлення', callback_data: 'last_update' },],
-         [{ text: 'Можливості пошти Політехніки', callback_data: 'mail_opportunities' },]
+         [{ text: '📧Можливості пошти Політехніки', callback_data: 'mail_opportunities' },]
       ],
    },
    noChunking: true,
