@@ -12,7 +12,8 @@ const mainMenuText = '-------------Головне меню-------------\nМен�
 const mainMenuKeyboard = {
    reply_markup: {
       inline_keyboard: [
-         [{ text: '🔎Швидкий пошук', callback_data: 'find_menu' }, { text: '📅Останнє оновлення', callback_data: 'last_update' },]
+         [{ text: '🔎Швидкий пошук', callback_data: 'find_menu' }, { text: '📅Останнє оновлення', callback_data: 'last_update' },],
+         [{ text: 'Можливості пошти Політехніки', callback_data: 'mail_opportunities' },]
       ],
    },
    noChunking: true,
@@ -38,7 +39,7 @@ const callbacks = {
    },
 
    'last_update': async (chatId) => {
-      const filePath = 'C:/#thcbot/nulpBot/nulpbot/last_update.txt';
+      const filePath = 'C:/#thcbot/nulpBot/nulpbot/text_files/last_update.txt';
       const options = {
          noChunking: true,
          reply_markup: {
@@ -50,6 +51,27 @@ const callbacks = {
       const text = readTextFromFile(filePath);
       return { text, options, chatId };
    },
+
+   'mail_opportunities': async (chatId) => {
+      const filePath = 'C:/#thcbot/nulpBot/nulpbot/text_files/mail_opportunities.txt';
+      const options = {
+         parse_mode: "Markdown",
+         noChunking: true,
+         reply_markup: {
+            inline_keyboard: [
+               [{ text: '🔙Назад', callback_data: 'main_menu' }],
+            ]
+         }
+      };
+      let text = readTextFromFile(filePath);
+
+      // Замінюємо посилання на відповідний формат Markdown
+      text = text.replace(/GitHub Students Pack/g, '[GitHub Students Pack](https://education.github.com/pack)');
+      text = text.replace(/Google Drive Unlimited/g, '[Google Drive Unlimited](https://www.google.com/drive/)');
+
+      return { text, options, chatId };
+   },
+
 
    'IKTA_1': async (chatId) => {
       return { text: '👨‍💻Виберіть спеціальність (1 Курс)', options: IKTA_1_Speciality, chatId };
