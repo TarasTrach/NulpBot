@@ -155,7 +155,7 @@ const callbacks = {
    },
 
    'KI_1_2_H': async (chatId) => {
-      const filePath = 'C:/#thcbot/nulpBot/Halyava/1 Курс/KI/ООФК'; // Шлях до файлу
+      const filePath = 'C:/#thcbot/nulpbot/Halyava/1 Курс/КІ/ООФК'; // Шлях до файлу
       const { lastModifiedMessage } = getLastModifiedTimeAndMessage(filePath); // Отримання дати останніх змін
       const spoiler = `_${lastModifiedMessage}_`
 
@@ -166,7 +166,7 @@ const callbacks = {
    },
 
    'KI_1_3_H': async (chatId) => {
-      const filePath = 'C:/#thcbot/nulpBot/Halyava/1 Курс/KI/Фізика'; // Шлях до файлу
+      const filePath = 'C:/#thcbot/nulpbot/Halyava/1 Курс/КІ/Фізика'; // Шлях до файлу
       const { lastModifiedMessage } = getLastModifiedTimeAndMessage(filePath); // Отримання дати останніх змін
       const spoiler = `_${lastModifiedMessage}_`
 
@@ -177,7 +177,7 @@ const callbacks = {
    },
 
    'KI_1_4_H': async (chatId) => {
-      const filePath = 'C:/#thcbot/nulpBot/Halyava/1 Курс/KI/Програмування'; // Шлях до файлу
+      const filePath = 'C:/#thcbot/nulpbot/Halyava/1 Курс/КІ/Програмування'; // Шлях до файлу
       const { lastModifiedMessage } = getLastModifiedTimeAndMessage(filePath); // Отримання дати останніх змін
       const spoiler = `_${lastModifiedMessage}_`
 
@@ -188,7 +188,7 @@ const callbacks = {
    },
 
    'KI_1_5_H': async (chatId) => {
-      const filePath = 'C:/#thcbot/nulpBot/Halyava/1 Курс/KI/Дискретка'; // Шлях до файлу
+      const filePath = 'C:/#thcbot/nulpbot/Halyava/1 Курс/КІ/Дискретка'; // Шлях до файлу
       const { lastModifiedMessage } = getLastModifiedTimeAndMessage(filePath); // Отримання дати останніх змін
       const spoiler = `_${lastModifiedMessage}_`
 
@@ -199,7 +199,7 @@ const callbacks = {
    },
 
    'KI_1_6_H': async (chatId) => {
-      const filePath = 'C:/#thcbot/nulpBot/Halyava/1 Курс/KI/Історія'; // Шлях до файлу
+      const filePath = 'C:/#thcbot/nulpbot/Halyava/1 Курс/КІ/Історія'; // Шлях до файлу
       const { lastModifiedMessage } = getLastModifiedTimeAndMessage(filePath); // Отримання дати останніх змін
       const spoiler = `_${lastModifiedMessage}_`
 
@@ -210,7 +210,7 @@ const callbacks = {
    },
 
    'KI_1_7_H': async (chatId) => {
-      const filePath = 'C:/#thcbot/nulpBot/Halyava/1 Курс/KI/Українська мова'; // Шлях до файлу
+      const filePath = 'C:/#thcbot/nulpbot/Halyava/1 Курс/КІ/Українська мова'; // Шлях до файлу
       const { lastModifiedMessage } = getLastModifiedTimeAndMessage(filePath); // Отримання дати останніх змін
       const spoiler = `_${lastModifiedMessage}_`
 
