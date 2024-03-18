@@ -21,9 +21,17 @@ const mainMenuKeyboard = {
 };
 
 const callbacks = {
+   // 'main_menu': async (chatId) => {
+   //    const text = mainMenuText;
+   //    return { text: text, options: mainMenuKeyboard, chatId };
+   // },
+
    'main_menu': async (chatId) => {
-      const text = mainMenuText;
-      return { text: text, options: mainMenuKeyboard, chatId };
+      const filePath = 'C:/#thcbot/nulpBot/nulpbot/text_files/main_menu.txt';
+
+      const text = readTextFromFile(filePath);
+
+      return { text, mainMenuKeyboard, chatId };
    },
 
    'find_menu': async (chatId) => {
