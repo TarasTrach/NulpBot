@@ -76,10 +76,9 @@ const callbacks = {
    'KI_1_3_H': async (chatId) => {
       const filePath = 'C:/#thcbot/nulpBot/nulpbot/test_files'; // Шлях до файлу
       const { lastModifiedMessage } = getLastModifiedTimeAndMessage(filePath); // Отримання дати останніх змін
-      const spoiler = `||${lastModifiedMessage}||`;
 
-      const text = `${textForHalyava}       ${spoiler}`;
-      const options = { ...BackOption, parse_mode: 'Markdown' };
+      const text = `${textForHalyava}     ${lastModifiedMessage}`;
+      const options = { ...BackOption };
 
       return { text, options, chatId, folderPath: filePath };
    },
@@ -157,8 +156,7 @@ function getLastModifiedTimeAndMessage(filePath) {
    try {
       const stats = fs.statSync(filePath);
       const lastModifiedTime = stats.mtime; // Дата останніх змін
-      const lastModifiedDate = lastModifiedTime.toDateString();
-      const lastModifiedMessage = `Останні зміни в файлах: ${lastModifiedDate.toLocaleString()}`; // Повідомлення з датою
+      const lastModifiedMessage = `Останні зміни в файлах: ${lastModifiedTime.toDateString()}`; // Повідомлення з датою без годинного часу
       return { lastModifiedTime, lastModifiedMessage };
    } catch (error) {
       console.error('Помилка при отриманні дати останніх змін:', error);
