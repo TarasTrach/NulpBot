@@ -106,15 +106,8 @@ module.exports = {
    KI_2_Options: {
       reply_markup: JSON.stringify({
          inline_keyboard: [
-            [{ text: 'Комп`ютерна електроніка', callback_data: 'KI_2_1' }, { text: 'Комп`ютерна логіка', callback_data: 'KI_2_2' }],
+            [{ text: 'Комп`ютерна логіка', callback_data: 'KI_2_1' }],
             [{ text: '🔙Назад', callback_data: 'back' }],
-         ]
-      })
-   },
-   KI_3_Options: {
-      reply_markup: JSON.stringify({
-         inline_keyboard: [
-            [{}],
          ]
       })
    },

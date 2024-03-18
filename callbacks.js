@@ -101,6 +101,8 @@ const callbacks = {
       return { text: '📕Виберіть предмет:', options: KI_2_Options, chatId };
    },
 
+
+
    'KI_1_1': async (chatId) => {
       const text = await getAnnouncementText('KI_1_1');
       const options = addButtonToBackOption('Халява', 'KI_1_1_H');
@@ -221,28 +223,23 @@ const callbacks = {
    },
 
 
-   'KI_123': async (chatId) => {
-      const courseNumber = getCourseNumber(chatId);
-      switch (courseNumber) {
-         case 1:
-            return { text: 'Виберіть предмет:', options: KI_1_Options, chatId };
-         case 2:
-            return { text: 'Виберіть предмет:', options: KI_2_Options, chatId };
-         case 3:
-            return { text: 'Виберіть предмет:', options: KI_3_Options, chatId };
-         case 4:
-            return { text: 'Виберіть предмет:', options: KI_4_Options, chatId };
-      }
-   },
+
 
    'KI_2_1': async (chatId) => {
       const text = await getAnnouncementText('KI_2_1');
-      return { text, chatId };
+      const options = addButtonToBackOption('Халява', 'KI_2_1_H');
+      return { text, options: options, chatId };
    },
 
-   'KI_2_2': async (chatId) => {
-      const text = await getAnnouncementText('KI_2_2');
-      return { text, chatId };
+   'KI_2_1_H': async (chatId) => {
+      const filePath = 'C:/#thcbot/nulpbot/Halyava/2 Курс/КІ/КЛ'; // Шлях до файлу
+      const { lastModifiedMessage } = getLastModifiedTimeAndMessage(filePath); // Отримання дати останніх змін
+      const spoiler = `_${lastModifiedMessage}_`
+
+      const text = `${textForHalyava}     ${spoiler}`;
+      const options = { ...BackOption, parse_mode: 'Markdown' };
+
+      return { text, options, chatId, folderPath: filePath };
    },
 };
 
