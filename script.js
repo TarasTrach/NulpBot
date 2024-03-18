@@ -539,10 +539,11 @@ const start = async () => {
             case '/updateall':
                if (userId == adminUsersId || userId == moderatorUsersId) {
                   const currentDate = new Date();
+                  const formattedDate = `${currentDate.getDate()}.${currentDate.getMonth() + 1}.${currentDate.getFullYear()} ${currentDate.getHours()}:${currentDate.getMinutes()}:${currentDate.getSeconds()}`;
                   updateSubscriptionStatuses();
                   setTimeout(updateAnnouncementStatuses, 1000);
                   bot.sendMessage(chatId, '_✅Статуси оновлено_', { parse_mode: 'Markdown' });
-                  console.log(`Оновлення статусів: ${currentDate}`);
+                  console.log(`Оновлення статусів: ${formattedDate}`);
                }
                break;
 
