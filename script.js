@@ -788,8 +788,17 @@ const start = async () => {
             bot.sendMessage(chatId, mainMenuText, mainMenuKeyboard);
 
          } else {
+
             await UserModel.findOneAndUpdate({ userId }, { course: newCourse });
-            await bot.sendMessage(chatId, `✅Курс оновлено на ${newCourse}`);
+
+            const options = {
+               reply_markup: {
+                  inline_keyboard: [
+                     [{ text: '🔙Назад', callback_data: 'main_menu' }],
+                  ]
+               }
+            };
+            await bot.sendMessage(chatId, options, `✅Курс оновлено на ${newCourse}`);
          }
       }
 
