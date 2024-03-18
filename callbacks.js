@@ -77,7 +77,7 @@ const callbacks = {
       const filePath = 'C:/#thcbot/nulpBot/nulpbot/test_files'; // Шлях до файлу
       const { lastModifiedMessage } = getLastModifiedTimeAndMessage(filePath); // Отримання дати останніх змін
 
-      const text = `${textForHalyava}\n${lastModifiedMessage}`;
+      const text = `${textForHalyava}       ${lastModifiedMessage}`;
       const options = { ...BackOption };
 
       return { text, options, chatId, folderPath: filePath };
