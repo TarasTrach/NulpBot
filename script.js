@@ -817,9 +817,9 @@ const start = async () => {
                }
 
                const userId = announcement.sellerId;
-               const message = data.startsWith('approve_') ? 'Оголошення схвалено.' : 'Оголошення відхилено.';
+               const message = data.startsWith('approve_') ? '✅Оголошення схвалено.' : '❌Оголошення відхилено.';
 
-               await bot.sendMessage(userId, `Ваше оголошення:\n${announcement.properties.text}\n${message}`);
+               await bot.sendMessage(userId, `Ваше оголошення:\n${announcement.properties.text}\n\n${message}`);
             } else {
                await bot.sendMessage(chatId, 'Оголошення для модерації не знайдено.');
             }
