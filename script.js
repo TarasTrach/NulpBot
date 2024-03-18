@@ -660,7 +660,7 @@ const start = async () => {
                         if (pendingAnnouncements.length > 0) {
                            pendingAnnouncements.forEach(async (announcement) => {
                               const userInfo = await getUserInfoById(announcement.sellerId);
-                              const messageText = `Оголошення від ${userInfo ? userInfo.username : 'Невідомий користувач'} для модерації:\n${announcement.properties.text}\nОпція: ${announcement.option}`;
+                              const messageText = `Оголошення від ${userInfo ? userInfo.username : 'Невідомий користувач'} для модерації:\n\n${announcement.properties.text}\n\nОпція: ${announcement.option}`;
 
                               // Опції для підтвердження або відхилення
                               const options = {
