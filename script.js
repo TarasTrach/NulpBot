@@ -785,20 +785,15 @@ const start = async () => {
             } else if (newCourse == 33) {
                await UserModel.findOneAndUpdate({ userId }, { course: 3 });
             }
-            bot.sendMessage(chatId, mainMenuText, mainMenuKeyboard);
+            await bot.sendMessage(chatId, mainMenuText, mainMenuKeyboard);
 
          } else {
 
             await UserModel.findOneAndUpdate({ userId }, { course: newCourse });
-
-            const options = {
-               reply_markup: {
-                  inline_keyboard: [
-                     [{ text: '🔙Назад', callback_data: 'main_menu' }],
-                  ]
-               }
-            };
-            await bot.sendMessage(options, chatId, `✅Курс оновлено на ${newCourse}`);
+            await bot.sendMessage(chatId, `✅Курс оновлено на ${newCourse}`);
+            setTimeout(async () => {
+               await bot.sendMessage(chatId, mainMenuText, mainMenuKeyboard);
+            }, 500);
          }
       }
 
