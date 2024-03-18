@@ -1,6 +1,11 @@
 За декілька тижнів після початку навчання вам дають пошту політехніки. З нею ви отримаєте наступні можливості: 
+
 ‧ JetBrains All-In-One IDEs Pack
 ‧ GitHub Students Pack
 ‧ Google Drive Unlimited (Max. 5TB per file)
 ‧ OneDrive 1TB
 ‧ Office 365 (Online)
+
+Пошта має вигляд name.surname.pz.2020@lpnu.ua
+Пароль: дата народження день.місяць.рік
+Для входу в тімс домен @edu.lpnu.ua

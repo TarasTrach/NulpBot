@@ -68,6 +68,7 @@ const callbacks = {
       // Замінюємо посилання на відповідний формат Markdown
       text = text.replace(/GitHub Students Pack/g, '[GitHub Students Pack](https://education.github.com/pack)');
       text = text.replace(/Google Drive Unlimited/g, '[Google Drive Unlimited](https://www.google.com/drive/)');
+      text = text.replace(/JetBrains All-In-One IDEs Pack/g, '[JetBrains All-In-One IDEs Pack](https://www.jetbrains.com/lp/leaflets-gdc/students/)');
 
       return { text, options, chatId };
    },
