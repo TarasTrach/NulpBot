@@ -31,7 +31,8 @@ const callbacks = {
 
    'main_menu': async (chatId) => {
       const text = mainMenuText;
-      return { text, mainMenuKeyboard, chatId };
+      const options = mainMenuKeyboard;
+      return { text, options, chatId };
    },
 
    'find_menu': async (chatId) => {
