@@ -726,27 +726,29 @@ const start = async () => {
                await sendFiles(chatId, messageInfo.folderPath);
             }
 
-            // console.log(userStepsData.steps);
+            // Розбиваємо повідомлення на частини, якщо не вказано інше
+            if (!messageInfo.options || !messageInfo.options.noChunking) {
+               const chunks = chunkString(messageInfo.text, 4000); // Максимальна довжина повідомлення
+               for (let i = 0; i < chunks.length; i++) {
+                  const options = (i === chunks.length - 1) ? messageInfo.options : {}; // Додаємо кнопки лише до останнього повідомлення
 
-            // Розбиваємо повідомлення на частини
-            const chunks = chunkString(messageInfo.text, 4000); // Максимальна довжина повідомлення
-            for (let i = 0; i < chunks.length; i++) {
-               const options = (i === chunks.length - 1) ? messageInfo.options : {}; // Додаємо кнопки лише до останнього повідомлення
-
-               // Відправляємо кожну частину окремо
-               await bot.sendMessage(chatId, chunks[i], options);
+                  // Відправляємо кожну частину окремо
+                  await bot.sendMessage(chatId, chunks[i], options);
+               }
+            } else {
+               // Відправляємо повідомлення без розбивки на частини
+               await bot.sendMessage(chatId, messageInfo.text, messageInfo.options);
             }
 
             // Зберігаємо зміни в базі даних
             await userStepsData.save();
-         } else {
-            // await bot.sendMessage(chatId, 'Помилка, відкрийте меню - /menu');
          }
       } catch (error) {
          console.error('Помилка при обробці колбека:', error);
          await bot.sendMessage(chatId, 'Помилка при обробці колбека.');
       }
    }
+
 
 
    function chunkString(str, length) {

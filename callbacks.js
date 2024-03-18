@@ -37,8 +37,9 @@ const callbacks = {
 
    'last_update': async (chatId) => {
       const filePath = 'C:/#thcbot/nulpBot/nulpbot/last_update.txt';
-      const text = readTextFromFile(filePath)
-      return { text: 'Останнє оновлення', text, chatId };
+      const options = { noChunking: true };
+      const text = readTextFromFile(filePath);
+      return { text, options, chatId };
    },
 
    'IKTA_1': async (chatId) => {
