@@ -156,13 +156,19 @@ function getLastModifiedTimeAndMessage(filePath) {
    try {
       const stats = fs.statSync(filePath);
       const lastModifiedTime = stats.mtime; // Дата останніх змін
-      const lastModifiedMessage = `Останні зміни в файлах: ${lastModifiedTime.toDateString()}`; // Повідомлення з датою без годинного часу
+
+      const day = String(lastModifiedTime.getDate()).padStart(2, '0');
+      const month = String(lastModifiedTime.getMonth() + 1).padStart(2, '0');
+      const year = lastModifiedTime.getFullYear();
+
+      const lastModifiedMessage = `Останні зміни в файлах: ${day}.${month}.${year}`; // Повідомлення з датою у форматі "18.03.2024"
       return { lastModifiedTime, lastModifiedMessage };
    } catch (error) {
       console.error('Помилка при отриманні дати останніх змін:', error);
       return { lastModifiedTime: null, lastModifiedMessage: 'Помилка при отриманні дати останніх змін' };
    }
 }
+
 
 
 
