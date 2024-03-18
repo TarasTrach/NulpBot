@@ -12,7 +12,7 @@ const { AnnouncementModel, UniqueCodeModel, SellerModel, UserModel, UserStepsMod
 
 // -------------------------------DATABASE---------------------------------------------------------------------
 // URL з'єднання з вашою базою даних MongoDB. Замініть на свій URL.
-const dbUrl = 'mongodb+srv://Revorved1:vdthbr010583@nulpbot.m9lnvqj.mongodb.net/';
+const dbUrl = 'mongodb+srv://Revorved1:vdthbr010583@nulpbot.cmxg3q7.mongodb.net/';
 
 // Підключення до бази даних
 mongoose.connect(dbUrl, {
@@ -843,7 +843,7 @@ const start = async () => {
                await bot.sendMessage(chatId, 'Помилка, відкрийте меню - /menu');
             }
          } catch (error) {
-            console.error('Помилка при обробці кнопки "Назад":', error);
+            // console.error('Помилка при обробці кнопки "Назад":', error);
             await bot.sendMessage(chatId, 'Помилка при обробці кнопки "Назад".');
          }
          return;

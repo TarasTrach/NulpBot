@@ -10,7 +10,7 @@ const mainMenuText = '-------------Головне меню-------------\nМен�
 const mainMenuKeyboard = {
    reply_markup: {
       inline_keyboard: [
-         [{ text: '🔎Пошук', callback_data: 'find_menu' },]
+         [{ text: '🔎Швидкий пошук', callback_data: 'find_menu' },]
       ],
    },
 };
