@@ -11,7 +11,7 @@ const mainMenuText = '-------------Головне меню-------------\nМен�
 const mainMenuKeyboard = {
    reply_markup: {
       inline_keyboard: [
-         [{ text: '🔎Швидкий пошук', callback_data: 'find_menu' },]
+         [{ text: '🔎Швидкий пошук', callback_data: 'find_menu' }, { text: '📅Останнє оновлення', callback_data: 'last_update' },]
       ],
    },
 };
@@ -33,6 +33,12 @@ const callbacks = {
          case 3:
             return { text: '📖Виберіть інститут', options: InstituteOptions_3, chatId };
       }
+   },
+
+   'last_update': async (chatId) => {
+      const filePath = 'C:/#thcbot/nulpBot/nulpbot/last_update.txt';
+      const text = readTextFromFile(filePath)
+      return { text: 'Останнє оновлення', text, chatId };
    },
 
    'IKTA_1': async (chatId) => {
@@ -167,6 +173,18 @@ function getLastModifiedTimeAndMessage(filePath) {
    } catch (error) {
       console.error('Помилка при отриманні дати останніх змін:', error);
       return { lastModifiedTime: null, lastModifiedMessage: 'Помилка при отриманні дати останніх змін' };
+   }
+}
+
+// Функція для зчитування вмісту файлу
+function readTextFromFile(filePath) {
+   try {
+      // Зчитування вмісту файлу з кодуванням utf-8
+      const text = fs.readFileSync(filePath, 'utf-8');
+      return text;
+   } catch (error) {
+      console.error('Помилка при зчитуванні файлу:', error);
+      return null;
    }
 }
 
