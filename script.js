@@ -541,7 +541,7 @@ const start = async () => {
                   const currentDate = new Date();
                   updateSubscriptionStatuses();
                   setTimeout(updateAnnouncementStatuses, 1000);
-                  bot.sendMessage(chatId, '✅Статуси оновлено');
+                  bot.sendMessage(chatId, '__✅Статуси оновлено__');
                   console.log(`Оновлення статусів: ${currentDate}`);
                }
                break;
