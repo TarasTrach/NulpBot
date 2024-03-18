@@ -798,7 +798,7 @@ const start = async () => {
                   ]
                }
             };
-            await bot.sendMessage(chatId, options, `✅Курс оновлено на ${newCourse}`);
+            await bot.sendMessage(options, chatId, `✅Курс оновлено на ${newCourse}`);
          }
       }
 
