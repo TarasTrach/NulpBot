@@ -78,7 +78,7 @@ module.exports = {
    IKTA_1_Speciality: {
       reply_markup: JSON.stringify({
          inline_keyboard: [
-            [{ text: 'Комп. інженерія', callback_data: 'KI_1' }, { text: 'Кібербезпека', callback_data: 'KB_1' }],
+            [{ text: 'Комп. інженерія', callback_data: 'KI_1' }],
             [{ text: '🔙Назад', callback_data: 'back' }],
          ]
       }),
@@ -87,7 +87,7 @@ module.exports = {
    IKTA_2_Speciality: {
       reply_markup: JSON.stringify({
          inline_keyboard: [
-            [{ text: 'Комп`ютерна інженерія', callback_data: 'KI_2' }, { text: 'Кібербезпека', callback_data: 'KB_2' }],
+            [{ text: 'Комп`ютерна інженерія', callback_data: 'KI_2' }],
             [{ text: '🔙Назад', callback_data: 'back' }],
          ]
       }),
@@ -97,6 +97,8 @@ module.exports = {
       reply_markup: JSON.stringify({
          inline_keyboard: [
             [{ text: 'Вишмат', callback_data: 'KI_1_1' }, { text: 'ООФК', callback_data: 'KI_1_2' }, { text: 'Фізика', callback_data: 'KI_1_3' }],
+            [{ text: 'Програмування', callback_data: 'KI_1_4' }, { text: 'Дискретна мат.', callback_data: 'KI_1_5' }, { text: 'Історія', callback_data: 'KI_1_6' }],
+            [{ text: 'Українська мова', callback_data: 'KI_1_7' }],
             [{ text: '🔙Назад', callback_data: 'back' }],
          ]
       })
