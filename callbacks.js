@@ -2,6 +2,7 @@ const { BackOption, CourseOptions, InstituteOptions_1, InstituteOptions_2,
    IKTA_1_Speciality, IKTA_2_Speciality, KI_1_Options, KI_2_Options, } = require('./options');
 const { AnnouncementModel, UserModel } = require('./models/models.js');
 const fs = require('fs');
+const options = require('./options');
 const userSteps = {};
 
 const textForHalyava = 'Зверніть увагу, що файли мають право завантажувати будь-які користувачі(не все може бути якісне)🙃                                                    Якщо маєте бажання завантажити щось - писати @lil_chicha_l';
@@ -14,6 +15,7 @@ const mainMenuKeyboard = {
          [{ text: '🔎Швидкий пошук', callback_data: 'find_menu' }, { text: '📅Останнє оновлення', callback_data: 'last_update' },]
       ],
    },
+   noChunking: true,
 };
 
 const callbacks = {
