@@ -37,7 +37,14 @@ const callbacks = {
 
    'last_update': async (chatId) => {
       const filePath = 'C:/#thcbot/nulpBot/nulpbot/last_update.txt';
-      const options = { noChunking: true };
+      const options = {
+         noChunking: true,
+         reply_markup: {
+            inline_keyboard: [
+               [{ text: 'Назад', callback_data: 'back' }]
+            ]
+         }
+      };
       const text = readTextFromFile(filePath);
       return { text, options, chatId };
    },
