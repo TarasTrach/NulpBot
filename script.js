@@ -724,9 +724,7 @@ const start = async () => {
             // Перевіряємо, чи в колбеку є folderPath
             if (messageInfo.folderPath) {
                await bot.sendMessage(chatId, '📥Завантаження файлів...');
-               setTimeout(async () => {
-                  await sendFiles(chatId, messageInfo.folderPath);
-               }, 500);
+               await sendFiles(chatId, messageInfo.folderPath);
             }
 
             // Розбиваємо повідомлення на частини, якщо не вказано інше
