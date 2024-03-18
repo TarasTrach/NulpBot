@@ -30,7 +30,8 @@ const callbacks = {
    // },
 
    'main_menu': async (chatId) => {
-      return { mainMenuText, mainMenuKeyboard, chatId };
+      const text = mainMenuText;
+      return { text, mainMenuKeyboard, chatId };
    },
 
    'find_menu': async (chatId) => {
