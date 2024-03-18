@@ -1,4 +1,4 @@
-const { BackOption, CourseOptions, InstituteOptions_1, InstituteOptions_2,
+const { BackOption, CourseOptions, InstituteOptions_1, InstituteOptions_2, InstituteOptions_3,
    IKTA_1_Speciality, IKTA_2_Speciality, KI_1_Options, KI_2_Options, } = require('./options');
 const { AnnouncementModel, UserModel } = require('./models/models.js');
 const fs = require('fs');
@@ -100,6 +100,7 @@ const callbacks = {
    'KI_2': async (chatId) => {
       return { text: '📕Виберіть предмет:', options: KI_2_Options, chatId };
    },
+
 
 
 
