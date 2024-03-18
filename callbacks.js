@@ -1,6 +1,7 @@
 const { BackOption, CourseOptions, InstituteOptions_1, InstituteOptions_2,
    IKTA_1_Speciality, IKTA_2_Speciality, KI_1_Options, KI_2_Options, } = require('./options');
 const { AnnouncementModel, UserModel } = require('./models/models.js');
+const fs = require('fs');
 const userSteps = {};
 
 const textForHalyava = 'Зверніть увагу, що файли мають право завантажувати будь-які користувачі(не все може бути якісне)🙃                                                    Якщо маєте бажання завантажити щось - писати @lil_chicha_l';
@@ -73,12 +74,13 @@ const callbacks = {
    },
 
    'KI_1_3_H': async (chatId) => {
-      const text = textForHalyava;
-      const folderPath = 'C:/#thcbot/nulpBot/nulpbot/test_files';
+      const filePath = 'C:/#thcbot/nulpBot/nulpbot/test_files'; // Шлях до файлу
+      const { lastModifiedMessage } = getLastModifiedTimeAndMessage(filePath); // Отримання дати останніх змін
 
-      const options = { ...BackOption }
+      const text = `${textForHalyava}\n${lastModifiedMessage}`;
+      const options = { ...BackOption };
 
-      return { text, options: options, chatId, folderPath };
+      return { text, options, chatId, folderPath: filePath };
    },
 
 
@@ -148,6 +150,19 @@ const addButtonToBackOption = (text, callback_data) => {
 
    return newOptions;
 };
+
+// Функція для отримання дати останніх змін файлу та створення повідомлення
+function getLastModifiedTimeAndMessage(filePath) {
+   try {
+      const stats = fs.statSync(filePath);
+      const lastModifiedTime = stats.mtime; // Дата останніх змін
+      const lastModifiedMessage = `Останні зміни в файлах: ${lastModifiedTime.toLocaleString()}`; // Повідомлення з датою
+      return { lastModifiedTime, lastModifiedMessage };
+   } catch (error) {
+      console.error('Помилка при отриманні дати останніх змін:', error);
+      return { lastModifiedTime: null, lastModifiedMessage: 'Помилка при отриманні дати останніх змін' };
+   }
+}
 
 
 
