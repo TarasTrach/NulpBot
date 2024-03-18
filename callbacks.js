@@ -76,8 +76,9 @@ const callbacks = {
    'KI_1_3_H': async (chatId) => {
       const filePath = 'C:/#thcbot/nulpBot/nulpbot/test_files'; // Шлях до файлу
       const { lastModifiedMessage } = getLastModifiedTimeAndMessage(filePath); // Отримання дати останніх змін
+      const spoiler = `__${lastModifiedMessage}__`
 
-      const text = `${textForHalyava}     ${lastModifiedMessage}`;
+      const text = `${textForHalyava}     ${spoiler}`;
       const options = { ...BackOption };
 
       return { text, options, chatId, folderPath: filePath };
