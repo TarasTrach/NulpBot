@@ -93,6 +93,14 @@ module.exports = {
       }),
    },
 
+   IKTA_3_Speciality: {
+      reply_markup: JSON.stringify({
+         inline_keyboard: [
+            [{ text: '🔙Назад', callback_data: 'back' }],
+         ]
+      }),
+   },
+
    KI_1_Options: {
       reply_markup: JSON.stringify({
          inline_keyboard: [
