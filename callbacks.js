@@ -5,7 +5,7 @@ const fs = require('fs');
 const options = require('./options');
 const userSteps = {};
 
-const textForHalyava = 'Зверніть увагу, що файли мають право завантажувати будь-які користувачі(не все може бути якісне)🙃                                                    Якщо маєте бажання завантажити щось - писати @lil_chicha_l';
+const textForHalyava = 'Зверніть увагу, що файли мають право завантажувати будь-які користувачі(не все може бути якісне)🙃\nЯкщо маєте бажання завантажити щось - писати @lil_chicha_l';
 
 const mainMenuFilePath = 'C:/#thcbot/nulpBot/nulpbot/text_files/main_menu.txt';
 const mainMenuText = readTextFromFile(mainMenuFilePath);
@@ -151,8 +151,8 @@ const callbacks = {
       const { lastModifiedMessage } = getLastModifiedTimeAndMessage(filePath); // Отримання дати останніх змін
       const spoiler = `_${lastModifiedMessage}_`
 
-      const text = `${textForHalyava}     ${spoiler}`;
-      const options = { ...BackOption, parse_mode: 'Markdown' };
+      const text = `${textForHalyava}\n${spoiler}`;
+      const options = { ...BackOption, parse_mode: 'Markdown', noChunking: true, };
 
       return { text, options, chatId, folderPath: filePath };
    },
@@ -162,8 +162,8 @@ const callbacks = {
       const { lastModifiedMessage } = getLastModifiedTimeAndMessage(filePath); // Отримання дати останніх змін
       const spoiler = `_${lastModifiedMessage}_`
 
-      const text = `${textForHalyava}     ${spoiler}`;
-      const options = { ...BackOption, parse_mode: 'Markdown' };
+      const text = `${textForHalyava}\n${spoiler}`;
+      const options = { ...BackOption, parse_mode: 'Markdown', noChunking: true, };
 
       return { text, options, chatId, folderPath: filePath };
    },
@@ -173,8 +173,8 @@ const callbacks = {
       const { lastModifiedMessage } = getLastModifiedTimeAndMessage(filePath); // Отримання дати останніх змін
       const spoiler = `_${lastModifiedMessage}_`
 
-      const text = `${textForHalyava}     ${spoiler}`;
-      const options = { ...BackOption, parse_mode: 'Markdown' };
+      const text = `${textForHalyava}\n${spoiler}`;
+      const options = { ...BackOption, parse_mode: 'Markdown', noChunking: true, };
 
       return { text, options, chatId, folderPath: filePath };
    },
@@ -184,8 +184,8 @@ const callbacks = {
       const { lastModifiedMessage } = getLastModifiedTimeAndMessage(filePath); // Отримання дати останніх змін
       const spoiler = `_${lastModifiedMessage}_`
 
-      const text = `${textForHalyava}     ${spoiler}`;
-      const options = { ...BackOption, parse_mode: 'Markdown' };
+      const text = `${textForHalyava}\n${spoiler}`;
+      const options = { ...BackOption, parse_mode: 'Markdown', noChunking: true, };
 
       return { text, options, chatId, folderPath: filePath };
    },
@@ -195,8 +195,8 @@ const callbacks = {
       const { lastModifiedMessage } = getLastModifiedTimeAndMessage(filePath); // Отримання дати останніх змін
       const spoiler = `_${lastModifiedMessage}_`
 
-      const text = `${textForHalyava}     ${spoiler}`;
-      const options = { ...BackOption, parse_mode: 'Markdown' };
+      const text = `${textForHalyava}\n${spoiler}`;
+      const options = { ...BackOption, parse_mode: 'Markdown', noChunking: true, };
 
       return { text, options, chatId, folderPath: filePath };
    },
@@ -206,8 +206,8 @@ const callbacks = {
       const { lastModifiedMessage } = getLastModifiedTimeAndMessage(filePath); // Отримання дати останніх змін
       const spoiler = `_${lastModifiedMessage}_`
 
-      const text = `${textForHalyava}     ${spoiler}`;
-      const options = { ...BackOption, parse_mode: 'Markdown' };
+      const text = `${textForHalyava}\n${spoiler}`;
+      const options = { ...BackOption, parse_mode: 'Markdown', noChunking: true, };
 
       return { text, options, chatId, folderPath: filePath };
    },
@@ -217,8 +217,8 @@ const callbacks = {
       const { lastModifiedMessage } = getLastModifiedTimeAndMessage(filePath); // Отримання дати останніх змін
       const spoiler = `_${lastModifiedMessage}_`
 
-      const text = `${textForHalyava}     ${spoiler}`;
-      const options = { ...BackOption, parse_mode: 'Markdown' };
+      const text = `${textForHalyava}\n${spoiler}`;
+      const options = { ...BackOption, parse_mode: 'Markdown', noChunking: true, };
 
       return { text, options, chatId, folderPath: filePath };
    },
@@ -237,8 +237,8 @@ const callbacks = {
       const { lastModifiedMessage } = getLastModifiedTimeAndMessage(filePath); // Отримання дати останніх змін
       const spoiler = `_${lastModifiedMessage}_`
 
-      const text = `${textForHalyava}     ${spoiler}`;
-      const options = { ...BackOption, parse_mode: 'Markdown' };
+      const text = `${textForHalyava}\n${spoiler}`;
+      const options = { ...BackOption, parse_mode: 'Markdown', noChunking: true, };
 
       return { text, options, chatId, folderPath: filePath };
    },
