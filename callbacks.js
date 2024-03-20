@@ -261,7 +261,7 @@ const callbacks = {
       return { text, options: options, chatId };
    },
 
-   'KI_2_4': async (chatId) => {
+   'KI_2_5': async (chatId) => {
       const text = await getAnnouncementText('KI_2_5');
       const options = BackOption;
       return { text, options: options, chatId };
