@@ -110,6 +110,7 @@ module.exports = {
       reply_markup: JSON.stringify({
          inline_keyboard: [
             [{ text: 'Комп`ютерна логіка', callback_data: 'KI_2_1' }, { text: 'Комп`ютерна електроніка', callback_data: 'KI_2_2' },],
+            [{ text: 'Комп`ютерна схемотехніка', callback_data: 'KI_2_3' }, { text: 'Системне програмування', callback_data: 'KI_2_4' },],
             [{ text: '🔙Назад', callback_data: 'back' }],
          ]
       })

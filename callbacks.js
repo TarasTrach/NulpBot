@@ -248,6 +248,18 @@ const callbacks = {
       const options = BackOption;
       return { text, options: options, chatId };
    },
+
+   'KI_2_3': async (chatId) => {
+      const text = await getAnnouncementText('KI_2_3');
+      const options = BackOption;
+      return { text, options: options, chatId };
+   },
+
+   'KI_2_4': async (chatId) => {
+      const text = await getAnnouncementText('KI_2_4');
+      const options = BackOption;
+      return { text, options: options, chatId };
+   },
 };
 
 const getCourseNumber = async (userId) => {
