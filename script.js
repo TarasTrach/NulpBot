@@ -727,18 +727,12 @@ const start = async () => {
                await sendFiles(chatId, messageInfo.folderPath);
             }
 
-            // Розбиваємо повідомлення на частини, якщо не вказано інше
-            if (!messageInfo.options || !messageInfo.options.noChunking) {
-               const chunks = chunkString(messageInfo.text, 4000); // Максимальна довжина повідомлення
-               for (let i = 0; i < chunks.length; i++) {
-                  const options = (i === chunks.length - 1) ? messageInfo.options : {}; // Додаємо кнопки лише до останнього повідомлення
+            // Отримуємо окремі оголошення
+            const announcements = messageInfo.text.split('\n');
 
-                  // Відправляємо кожну частину окремо
-                  await bot.sendMessage(chatId, chunks[i], options);
-               }
-            } else {
-               // Відправляємо повідомлення без розбивки на частини
-               await bot.sendMessage(chatId, messageInfo.text, messageInfo.options);
+            // Відправляємо кожне оголошення окремим повідомленням
+            for (const announcement of announcements) {
+               await bot.sendMessage(chatId, announcement, messageInfo.options);
             }
 
             // Зберігаємо зміни в базі даних
@@ -749,8 +743,6 @@ const start = async () => {
          await bot.sendMessage(chatId, 'Помилка при обробці колбека.');
       }
    }
-
-
 
    function chunkString(str, length) {
       const regex = new RegExp(`.{1,${length}}`, 'g');
