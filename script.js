@@ -812,6 +812,7 @@ const start = async () => {
             const announcement = await AnnouncementModel.findOne({ _id: announcementId, isPendingModeration: true });
 
             if (announcement) {
+               const userId = announcement.sellerId;
                if (data.startsWith('approve_')) {
                   // Підтвердження оголошення
                   await AnnouncementModel.findByIdAndUpdate(announcementId, { isPendingModeration: false, isApproved: true, isActive: true });
@@ -824,7 +825,6 @@ const start = async () => {
                   await bot.sendMessage(chatId, 'Оголошення відхилено.');
                }
 
-               const userId = announcement.sellerId;
                const message = data.startsWith('approve_') ? '✅Оголошення схвалено.' : '❌Оголошення відхилено.';
 
                await bot.sendMessage(userId, `Ваше оголошення:\n${announcement.properties.text}\n\n${message}`);
