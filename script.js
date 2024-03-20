@@ -822,6 +822,8 @@ const start = async () => {
                   const seller = await SellerModel.findOne({ telegramId: userId });
                   seller.numberOfAnnouncements -= 1;
                   await AnnouncementModel.findByIdAndDelete(announcementId);
+                  await seller.save();
+
                   await bot.sendMessage(chatId, 'Оголошення відхилено.');
                }
 
