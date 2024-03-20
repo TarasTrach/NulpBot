@@ -526,6 +526,13 @@ const start = async () => {
                const isSellerUser = await isSeller(userId);
 
                let userStepsData = await UserStepsModel.findOne({ chatId });
+
+               if (!userStepsData) {
+                  // Створюємо новий об'єкт userStepsData, якщо він не існує
+                  userStepsData = new UserStepsModel({ chatId, steps: [] });
+               }
+
+               // Оновлюємо властивість steps, якщо об'єкт userStepsData існує
                userStepsData.steps = ['seller_menu'];
                await userStepsData.save();
 
@@ -535,6 +542,7 @@ const start = async () => {
                   bot.sendMessage(chatId, 'Ви не зареєстровані як продавець. Зареєструйтесь, - @nulpsupport щоб отримати доступ до цього меню');
                }
                break;
+
 
             case '/updateall':
                if (userId == adminUsersId || userId == moderatorUsersId) {
