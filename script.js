@@ -728,7 +728,7 @@ const start = async () => {
             }
 
             // Отримуємо окремі оголошення
-            const announcements = messageInfo.text.split('\n');
+            const announcements = messageInfo.text.split('\n\n');
 
             // Відправляємо кожне оголошення окремим повідомленням
             for (const announcement of announcements) {
