@@ -242,6 +242,12 @@ const callbacks = {
 
       return { text, options, chatId, folderPath: filePath };
    },
+
+   'KI_2_2': async (chatId) => {
+      const text = await getAnnouncementText('KI_2_2');
+      const options = BackOption;
+      return { text, options: options, chatId };
+   },
 };
 
 const getCourseNumber = async (userId) => {
