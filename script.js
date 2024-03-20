@@ -532,7 +532,7 @@ const start = async () => {
                if (isSellerUser) {
                   bot.sendMessage(chatId, 'Меню продавця:', SellerOptions);
                } else {
-                  bot.sendMessage(chatId, 'Ви не зареєстровані як продавець. Зареєструйтесь, щоб отримати доступ до цього меню.');
+                  bot.sendMessage(chatId, 'Ви не зареєстровані як продавець. Зареєструйтесь, - @nulpsupport щоб отримати доступ до цього меню');
                }
                break;
 
