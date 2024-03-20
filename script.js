@@ -730,9 +730,24 @@ const start = async () => {
             // Отримуємо окремі оголошення
             const announcements = messageInfo.text.split('\n\n');
 
+            // Отримуємо кількість оголошень
+            const totalAnnouncements = announcements.length;
+
             // Відправляємо кожне оголошення окремим повідомленням
-            for (const announcement of announcements) {
-               await bot.sendMessage(chatId, announcement, messageInfo.options);
+            for (let i = 0; i < totalAnnouncements; i++) {
+               // Отримуємо оголошення
+               const announcement = announcements[i];
+
+               // Встановлюємо параметри повідомлення
+               let options = {};
+
+               // Якщо це останнє оголошення, встановлюємо параметри повідомлення з messageInfo.options
+               if (i === totalAnnouncements - 1) {
+                  options = { ...messageInfo.options };
+               }
+
+               // Відправляємо повідомлення з поточними параметрами
+               await bot.sendMessage(chatId, announcement, options);
             }
 
             // Зберігаємо зміни в базі даних
