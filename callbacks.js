@@ -278,7 +278,7 @@ const getAnnouncementText = async (option) => {
 
       if (announcements.length > 0) {
          const texts = announcements.map((announcement) => announcement.properties.text);
-         return texts.join('\n'); // Повертаємо всі текстові оголошення, розділені новим рядком
+         return texts.join('\n\n'); // Повертаємо всі текстові оголошення, розділені новим рядком
       } else {
          return 'Ми не знайшли оголошень для цього предмету😕';
       }
