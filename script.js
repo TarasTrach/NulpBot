@@ -500,10 +500,14 @@ const start = async () => {
                try {
                   const courseNumber = await getCourseNumber(userId);
                   let userStepsData = await UserStepsModel.findOne({ chatId });
+
+                  if (!userStepsData) {
+                     // Створюємо новий об'єкт userStepsData, якщо він не існує
+                     userStepsData = new UserStepsModel({ chatId, steps: [] });
+                  }
+
                   userStepsData.steps = ['main_menu', 'find_menu'];
                   await userStepsData.save();
-
-                  // console.log(userStepsData.steps);
 
                   switch (courseNumber) {
                      case 1:
