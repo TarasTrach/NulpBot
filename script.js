@@ -399,7 +399,7 @@ const sendBroadcastToSubscribedSellers = async (bot, messageText) => {
 
 
 // -------------------------------MAIN CODE---------------------------------------------------------------------
-const { AnnouncementOptions, CourseOptions, SellerOptions, getAnnouncementOptions, InstituteOptions_1, InstituteOptions_2 } = require('./options');
+const { AnnouncementOptions, CourseOptions, SellerOptions, getAnnouncementOptions, InstituteOptions_1, InstituteOptions_2, InstituteOptions_3 } = require('./options');
 const { callbacks, userSteps, getCourseNumber, mainMenuText, mainMenuKeyboard } = require('./callbacks');
 
 const fs = require('fs');
